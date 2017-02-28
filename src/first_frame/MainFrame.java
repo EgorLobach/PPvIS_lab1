@@ -120,10 +120,7 @@ public class MainFrame extends JFrame {
 
         //task3end***********************************************
 
-        //task4
 
-
-        //task4end****************************************************
 
         setVisible(true);
         pack();
