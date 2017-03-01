@@ -43,6 +43,17 @@ public class MainFrame extends JFrame {
     private JCheckBox checkBox3ofTask4 = new JCheckBox("3");
     private JPanel task4Panel = new JPanel(new GridBagLayout());
 
+    //task5
+    private JTextField textFieldOfTask5 = new JTextField(10);
+    private JButton addToTableButton = new JButton("Добавить в таблицу");
+    private JButton transferredTo2Button = new JButton("Перенести в 2 строку");
+    private JButton transferredTo1Button = new JButton("Перенести в 1 строку");
+    private JPanel task5Panel = new JPanel(new GridBagLayout());
+    private TableModel tableModel = new TableModel();
+    private JTable table = new JTable(tableModel);
+    private JScrollPane tableScrollPane = new JScrollPane(table);
+
+
 
 
     public MainFrame(String title ,Dimension d)
@@ -130,7 +141,8 @@ public class MainFrame extends JFrame {
 
         //task4
 
-        textFieldOfTask4.setFont(new Font("fontForFieldOfTask3", Font.ITALIC,17));
+
+        textFieldOfTask4.setFont(new Font("fontForFieldOfTask4", Font.ITALIC,17));
         establishCheckBox.addActionListener(new Task4EstablishCheckBoxActionListener());
         task4Panel.add(textFieldOfTask4, new GridBagConstraints(0, 0, 2, 1, 1 , 1,
                 GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
@@ -153,6 +165,34 @@ public class MainFrame extends JFrame {
                 new Insets(25, 25, 1, 1), 0, 0));
 
         //task4end***********************************************
+
+        //task5
+        table.setRowHeight(20);
+        table.setFont(new Font("fontForFieldOFTable", Font.ITALIC, 17));
+        textFieldOfTask5.setFont(new Font("fontForFieldOFTask5", Font.ITALIC, 17));
+        addToTableButton.addActionListener(new Task5AddToTableActionListener());
+        tableScrollPane.setPreferredSize(new Dimension(100,200));
+        task5Panel.add(tableScrollPane, new GridBagConstraints(0, 1, 2, 1, 1 , 1,
+                GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
+                new Insets(1, 1, 1, 1), 0, 0));
+
+        task5Panel.add(textFieldOfTask5, new GridBagConstraints(0, 0, 1, 1, 1 , 1,
+                GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
+                new Insets(1, 1, 1, 1), 0, 0));
+        task5Panel.add(addToTableButton, new GridBagConstraints(1, 0, 1, 1, 1 , 1,
+                GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
+                new Insets(1, 1, 1, 1), 0, 0));
+        task5Panel.add(transferredTo2Button, new GridBagConstraints(0, 2, 1, 1, 1 , 1,
+                GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
+                new Insets(1, 1, 1, 1), 0, 0));
+        task5Panel.add(transferredTo1Button, new GridBagConstraints(1, 2, 1, 1, 1 , 1,
+                GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
+                new Insets(1, 1, 1, 1), 0, 0));
+        add(task5Panel, new GridBagConstraints(2, 0, 1, 1, 1, 1,
+                GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
+                new Insets(1, 25,1,1), 0,0));
+
+        //task5end***********************************************
 
         setVisible(true);
         pack();
@@ -242,4 +282,35 @@ public class MainFrame extends JFrame {
             textFieldOfTask4.setText("");
         }
     }
+
+    public class Task5AddToTableActionListener implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent event) {
+            if ((textFieldOfTask5.getText()).trim().isEmpty()) {}
+            else
+            {
+                String [] str = new String[2];
+                str[0]=textFieldOfTask5.getText();
+                str[1]=" ";
+                tableModel.addData(str);
+            }
+            textFieldOfTask5.setText("");
+            table.updateUI();
+
+        }
+    }
+
+
+
+    /*public class Task5AddToTableActionListener implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent event) {
+            addToTableButton.setText(textFieldOfTask5.getSelectedText());
+        }
+    }
+    */
 }
