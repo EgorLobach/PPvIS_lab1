@@ -28,12 +28,20 @@ public class MainFrame extends JFrame {
 
     //task3
     private JTextField textFieldOfTask3 = new JTextField(10);
-    private JButton establishButton = new JButton("Установить");
+    private JButton establishRadioButton = new JButton("Установить RadioButton");
     private ButtonGroup groupTask3 = new ButtonGroup();
-    private JRadioButton radioButton1ofTask3 = new JRadioButton("RadioButton1");
-    private JRadioButton radioButton2ofTask3 = new JRadioButton("RadioButton2");
-    private JRadioButton radioButton3ofTask3 = new JRadioButton("RadioButton3");
+    private JRadioButton radioButton1ofTask3 = new JRadioButton("1");
+    private JRadioButton radioButton2ofTask3 = new JRadioButton("2");
+    private JRadioButton radioButton3ofTask3 = new JRadioButton("3");
     private JPanel task3Panel = new JPanel(new GridBagLayout());
+
+    //task4
+    private JTextField textFieldOfTask4 = new JTextField(10);
+    private JButton establishCheckBox = new JButton("Установить JCheckBox");
+    private JCheckBox checkBox1ofTask4 = new JCheckBox("1");
+    private JCheckBox checkBox2ofTask4 = new JCheckBox("2");
+    private JCheckBox checkBox3ofTask4 = new JCheckBox("3");
+    private JPanel task4Panel = new JPanel(new GridBagLayout());
 
 
 
@@ -97,13 +105,13 @@ public class MainFrame extends JFrame {
         task3Panel.add(textFieldOfTask3, new GridBagConstraints(0, 0, 2, 1, 1 , 1,
                 GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
                 new Insets(1, 1, 1, 1), 0, 0));
-        task3Panel.add(establishButton, new GridBagConstraints(0, 1, 1, 1, 1 , 1,
+        task3Panel.add(establishRadioButton, new GridBagConstraints(0, 1, 1, 1, 1 , 1,
                 GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
                 new Insets(1, 1, 1, 1), 0, 0));
         groupTask3.add(radioButton1ofTask3);
         groupTask3.add(radioButton2ofTask3);
         groupTask3.add(radioButton3ofTask3);
-        establishButton.addActionListener(new Task3EstablishButtonActionListener());
+        establishRadioButton.addActionListener(new Task3EstablishRadioButtonActionListener());
         task3Panel.add(radioButton1ofTask3, new GridBagConstraints(0, 2, 1, 1, 1 , 1,
                 GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
                 new Insets(1, 1, 1, 1), 0, 0));
@@ -116,11 +124,33 @@ public class MainFrame extends JFrame {
 
         add(task3Panel, new GridBagConstraints(1, 0, 1, 1, 1 , 1,
                 GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
-                new Insets(1, 25, 1, 1), 0, 0));
+                new Insets(1, 25, 25, 1), 0, 0));
 
         //task3end***********************************************
 
         //task4
+
+        textFieldOfTask4.setFont(new Font("fontForFieldOfTask3", Font.ITALIC,17));
+        establishCheckBox.addActionListener(new Task4EstablishCheckBoxActionListener());
+        task4Panel.add(textFieldOfTask4, new GridBagConstraints(0, 0, 2, 1, 1 , 1,
+                GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
+                new Insets(1, 1, 1, 1), 0, 0));
+        task4Panel.add(establishCheckBox, new GridBagConstraints(0, 1, 1, 1, 1 , 1,
+                GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
+                new Insets(1, 1, 1, 1), 0, 0));
+        task4Panel.add(checkBox1ofTask4, new GridBagConstraints(0, 2, 1, 1, 1 , 1,
+                GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
+                new Insets(1, 1, 1, 1), 0, 0));
+        task4Panel.add(checkBox2ofTask4, new GridBagConstraints(0, 3, 1, 1, 1 , 1,
+                GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
+                new Insets(1, 1, 1, 1), 0, 0));
+        task4Panel.add(checkBox3ofTask4, new GridBagConstraints(0, 4, 1, 1, 1 , 1,
+                GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
+                new Insets(1, 1, 1, 1), 0, 0));
+
+        add(task4Panel, new GridBagConstraints(1, 1, 1, 1, 1 , 1,
+                GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
+                new Insets(25, 25, 1, 1), 0, 0));
 
         //task4end***********************************************
 
@@ -172,7 +202,9 @@ public class MainFrame extends JFrame {
         }
     }
 
-    public class Task3EstablishButtonActionListener implements ActionListener
+
+
+    public class Task3EstablishRadioButtonActionListener implements ActionListener
     {
         public void actionPerformed(ActionEvent event)
         {
@@ -188,6 +220,26 @@ public class MainFrame extends JFrame {
                 else JOptionPane.showMessageDialog(new JFrame(), "Такой кнопки не существует!!!");
             }
             textFieldOfTask3.setText("");
+        }
+    }
+
+
+    public class Task4EstablishCheckBoxActionListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent event)
+        {
+            if ((textFieldOfTask4.getText()).trim().isEmpty()) {}
+            else
+            {
+                if(textFieldOfTask4.getText().equals(checkBox1ofTask4.getText()))
+                    checkBox1ofTask4.setSelected(true);
+                else if(textFieldOfTask4.getText().equals(checkBox2ofTask4.getText()))
+                    checkBox2ofTask4.setSelected(true);
+                else if(textFieldOfTask4.getText().equals(checkBox3ofTask4.getText()))
+                    checkBox3ofTask4.setSelected(true);
+                else JOptionPane.showMessageDialog(new JFrame(), "Такой кнопки не существует!!!");
+            }
+            textFieldOfTask4.setText("");
         }
     }
 }
