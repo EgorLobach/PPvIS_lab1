@@ -61,12 +61,4 @@ public class TableModel extends AbstractTableModel {
         dataArrayList.remove(rowIndex);
     }
 
-
-    public void clearData()
-    {
-        for (int i=0; i<dataArrayList.size();i++)
-        {
-            dataArrayList.clear();
-        }
-    }
 }
