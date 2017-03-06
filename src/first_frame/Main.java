@@ -7,7 +7,7 @@ import java.awt.*;
  */
 public class Main {
     public static void main(String[] args) {
-        MainFrame mf = new MainFrame("Frame", new Dimension(1080,720));
-        mf.init();
+        MainFrame mainFrame = new MainFrame("Frame", new Dimension(1080,720));
+        mainFrame.init();
     }
 }

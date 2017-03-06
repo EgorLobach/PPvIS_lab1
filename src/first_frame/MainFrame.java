@@ -37,7 +37,7 @@ public class MainFrame extends JFrame {
 
     //task4
     private JTextField textFieldOfTask4 = new JTextField(10);
-    private JButton establishCheckBox = new JButton("Установить JCheckBox");
+    private JButton establishCheckBox = new JButton("Установить CheckBox");
     private JCheckBox checkBox1ofTask4 = new JCheckBox("1");
     private JCheckBox checkBox2ofTask4 = new JCheckBox("2");
     private JCheckBox checkBox3ofTask4 = new JCheckBox("3");
@@ -268,6 +268,7 @@ public class MainFrame extends JFrame {
     {
         public void actionPerformed(ActionEvent event)
         {
+           /*
             if ((textFieldOfTask4.getText()).trim().isEmpty()) {}
             else
             {
@@ -278,6 +279,23 @@ public class MainFrame extends JFrame {
                 else if(textFieldOfTask4.getText().equals(checkBox3ofTask4.getText()))
                     checkBox3ofTask4.setSelected(true);
                 else JOptionPane.showMessageDialog(new JFrame(), "Такой кнопки не существует!!!");
+            }
+            textFieldOfTask4.setText("");
+            */
+            if ((textFieldOfTask4.getText()).trim().isEmpty()) {}
+            else
+            {
+                String[] temp = textFieldOfTask4.getText().split(" ");
+                for (int i=0;i<temp.length;i++)
+                {
+                    if(temp[i].equals(checkBox1ofTask4.getText()))
+                        checkBox1ofTask4.setSelected(true);
+                    else if(temp[i].equals(checkBox2ofTask4.getText()))
+                        checkBox2ofTask4.setSelected(true);
+                    else if(temp[i].equals(checkBox3ofTask4.getText()))
+                        checkBox3ofTask4.setSelected(true);
+                    else JOptionPane.showMessageDialog(new JFrame(), "Такой кнопки не существует!!!");
+                }
             }
             textFieldOfTask4.setText("");
         }
