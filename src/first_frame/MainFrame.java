@@ -288,7 +288,8 @@ public class MainFrame extends JFrame {
                 String[] temp = textFieldOfTask4.getText().split(" ");
                 for (int i=0;i<temp.length;i++)
                 {
-                    if(temp[i].equals(checkBox1ofTask4.getText()))
+                    if (temp[i]==" ") {}
+                    else if(temp[i].equals(checkBox1ofTask4.getText()))
                         checkBox1ofTask4.setSelected(true);
                     else if(temp[i].equals(checkBox2ofTask4.getText()))
                         checkBox2ofTask4.setSelected(true);
