@@ -171,6 +171,8 @@ public class MainFrame extends JFrame {
         table.setFont(new Font("fontForFieldOFTable", Font.ITALIC, 17));
         textFieldOfTask5.setFont(new Font("fontForFieldOFTask5", Font.ITALIC, 17));
         addToTableButton.addActionListener(new Task5AddToTableActionListener());
+        transferredTo2Button.addActionListener(new Task5TransferredTo2ButtonActionListener());
+        transferredTo1Button.addActionListener(new Task5TransferredTo1ButtonActionListener());
         tableScrollPane.setPreferredSize(new Dimension(100,200));
         task5Panel.add(tableScrollPane, new GridBagConstraints(0, 1, 2, 1, 1 , 1,
                 GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
@@ -323,13 +325,31 @@ public class MainFrame extends JFrame {
 
 
 
-    /*public class Task5AddToTableActionListener implements ActionListener
+    public class Task5TransferredTo2ButtonActionListener implements ActionListener
     {
 
         @Override
         public void actionPerformed(ActionEvent event) {
-            addToTableButton.setText(textFieldOfTask5.getSelectedText());
+            String [] str = new String[2];
+            str[1]=(String)tableModel.getValueAt(table.getSelectedRow(), table.getSelectedColumn());
+            str[0]=" ";
+            tableModel.removeData(table.getSelectedRow());
+            tableModel.addData(str, table.getSelectedRow());
+            table.updateUI();
         }
     }
-    */
+    public class Task5TransferredTo1ButtonActionListener implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent event) {
+            String [] str = new String[2];
+            str[0]=(String)tableModel.getValueAt(table.getSelectedRow(), table.getSelectedColumn());
+            str[1]=" ";
+            tableModel.removeData(table.getSelectedRow());
+            tableModel.addData(str, table.getSelectedRow());
+            table.updateUI();
+        }
+    }
+
 }

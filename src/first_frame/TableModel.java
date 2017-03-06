@@ -2,6 +2,7 @@ package first_frame;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by anonymous on 01.03.2017.
@@ -49,10 +50,17 @@ public class TableModel extends AbstractTableModel {
 
     public void addData(String []row)
     {
-        String []rowTable = new String[getColumnCount()];
-        rowTable = row;
-        dataArrayList.add(rowTable);
+        dataArrayList.add(row);
     }
+    public void addData(String []row, int rowIndex)
+    {
+        dataArrayList.add(rowIndex, row);
+    }
+    public void removeData(int rowIndex)
+    {
+        dataArrayList.remove(rowIndex);
+    }
+
 
     public void clearData()
     {
