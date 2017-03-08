@@ -56,6 +56,7 @@ public class Task4 {
             }
             textFieldOfTask4.setText("");
             */
+           /*
             if ((textFieldOfTask4.getText()).trim().isEmpty()) {}
             else
             {
@@ -73,6 +74,45 @@ public class Task4 {
                 }
             }
             textFieldOfTask4.setText("");
+            */
+
+
+
+           if ((textFieldOfTask4.getText()).trim().isEmpty()) {}
+            else
+            {
+                String temp = textFieldOfTask4.getText();
+                if((temp.indexOf(" " + checkBox1ofTask4.getText())!=-1
+                        ||temp.indexOf(checkBox1ofTask4.getText())==0)
+                        && (temp.indexOf(checkBox1ofTask4.getText()+ " " )!=-1
+                        ||temp.indexOf(checkBox1ofTask4.getText())+checkBox1ofTask4.getText().length()==temp.length()))
+                {
+                    checkBox1ofTask4.setSelected(true);
+                    temp=temp.replaceAll(checkBox1ofTask4.getText(), "");
+                }
+                if((temp.indexOf(" " + checkBox2ofTask4.getText())!=-1
+                        ||temp.indexOf(checkBox2ofTask4.getText())==0)
+                        && (temp.indexOf(checkBox2ofTask4.getText()+ " " )!=-1
+                        ||temp.indexOf(checkBox2ofTask4.getText())+checkBox2ofTask4.getText().length()==temp.length()))
+                {
+                    checkBox2ofTask4.setSelected(true);
+                    temp=temp.replaceAll(checkBox2ofTask4.getText(), "");
+                }
+                if((temp.indexOf(" " + checkBox3ofTask4.getText())!=-1
+                        ||temp.indexOf(checkBox3ofTask4.getText())==0)
+                        && (temp.indexOf(checkBox3ofTask4.getText()+ " " )!=-1
+                        ||temp.indexOf(checkBox3ofTask4.getText())+checkBox3ofTask4.getText().length()==temp.length()))
+                {
+                    checkBox3ofTask4.setSelected(true);
+                    temp=temp.replaceAll(checkBox3ofTask4.getText(), "");
+                }
+                if (!temp.trim().isEmpty())
+                {
+                    JOptionPane.showMessageDialog(new JFrame(), "Такой кнопки не существует!!!");
+                }
+            }
+            textFieldOfTask4.setText("");
+
         }
     }
 }
