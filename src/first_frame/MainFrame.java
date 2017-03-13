@@ -55,7 +55,7 @@ public class MainFrame{
                 GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
                 new Insets(25, 25, 1, 1), 0, 0));
 
-        headFrame.add(task5Panel.initTask5(), new GridBagConstraints(2, 0, 1, 1, 1, 1,
+        headFrame.add(task5Panel.initTask5(), new GridBagConstraints(2, 0, 1, 2, 1, 1,
                 GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
                 new Insets(1, 25,1,1), 0,0));
 

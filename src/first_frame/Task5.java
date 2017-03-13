@@ -56,7 +56,7 @@ public class Task5 {
             {
                 String [] str = new String[2];
                 str[0]=textFieldOfTask5.getText();
-                str[1]=" ";
+                str[1]="";
                 tableModel.addData(str);
             }
             textFieldOfTask5.setText("");
@@ -72,7 +72,9 @@ public class Task5 {
         public void actionPerformed(ActionEvent event) {
             String [] str = new String[2];
             str[1]=(String)tableModel.getValueAt(table.getSelectedRow(), table.getSelectedColumn());
-            str[0]=" ";
+            if (table.getSelectedColumn()==1||str[1].trim().isEmpty())
+                return;
+            str[0]="";
             tableModel.removeData(table.getSelectedRow());
             tableModel.addData(str, table.getSelectedRow());
             table.updateUI();
@@ -86,7 +88,9 @@ public class Task5 {
         public void actionPerformed(ActionEvent event) {
             String [] str = new String[2];
             str[0]=(String)tableModel.getValueAt(table.getSelectedRow(), table.getSelectedColumn());
-            str[1]=" ";
+            if (table.getSelectedColumn()==0||str[0].trim().isEmpty())
+                return;
+            str[1]="";
             tableModel.removeData(table.getSelectedRow());
             tableModel.addData(str, table.getSelectedRow());
             table.updateUI();

@@ -18,7 +18,6 @@ public class Task4 {
 
     public JPanel initTask4()
     {
-
         textFieldOfTask4.setFont(new Font("fontForFieldOfTask4", Font.ITALIC,17));
         establishCheckBox.addActionListener(new Task4EstablishCheckBoxActionListener());
         task4Panel.add(textFieldOfTask4, new GridBagConstraints(0, 0, 2, 1, 1 , 1,
@@ -56,6 +55,7 @@ public class Task4 {
             }
             textFieldOfTask4.setText("");
             */
+
            /*
             if ((textFieldOfTask4.getText()).trim().isEmpty()) {}
             else
@@ -75,8 +75,6 @@ public class Task4 {
             }
             textFieldOfTask4.setText("");
             */
-
-
 
            if ((textFieldOfTask4.getText()).trim().isEmpty()) {}
             else
@@ -112,7 +110,6 @@ public class Task4 {
                 }
             }
             textFieldOfTask4.setText("");
-
         }
     }
 }
