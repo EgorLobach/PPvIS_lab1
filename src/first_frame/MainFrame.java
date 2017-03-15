@@ -25,6 +25,8 @@ public class MainFrame{
 
     Task5 task5Panel = new Task5();
 
+    AdditionalTask additionalTaskPanel = new AdditionalTask();
+
     public MainFrame(String title ,Dimension d)
     {
         this.title=title;
@@ -59,8 +61,15 @@ public class MainFrame{
                 GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
                 new Insets(1, 25,1,1), 0,0));
 
+        headFrame.add(additionalTaskPanel.initAdditionalTask(), new GridBagConstraints(3, 0, 1, 2, 1, 1,
+                GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
+                new Insets(1, 25,1,1), 0,0));
+
+
+
         headFrame.setVisible(true);
         headFrame.pack();
 
     }
+
 }

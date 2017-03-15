@@ -85,24 +85,48 @@ public class Task4 {
                         && (temp.indexOf(checkBox1ofTask4.getText()+ " " )!=-1
                         ||temp.indexOf(checkBox1ofTask4.getText())+checkBox1ofTask4.getText().length()==temp.length()))
                 {
-                    checkBox1ofTask4.setSelected(true);
-                    temp=temp.replaceAll(checkBox1ofTask4.getText(), "");
+                    if (checkBox1ofTask4.isSelected())
+                    {
+                        checkBox1ofTask4.setSelected(false);
+                        temp=temp.replaceAll(checkBox1ofTask4.getText(), "");
+
+                    }
+                    else {
+                        checkBox1ofTask4.setSelected(true);
+                        temp = temp.replaceAll(checkBox1ofTask4.getText(), "");
+                    }
                 }
                 if((temp.indexOf(" " + checkBox2ofTask4.getText())!=-1
                         ||temp.indexOf(checkBox2ofTask4.getText())==0)
                         && (temp.indexOf(checkBox2ofTask4.getText()+ " " )!=-1
                         ||temp.indexOf(checkBox2ofTask4.getText())+checkBox2ofTask4.getText().length()==temp.length()))
                 {
-                    checkBox2ofTask4.setSelected(true);
-                    temp=temp.replaceAll(checkBox2ofTask4.getText(), "");
+                    if (checkBox2ofTask4.isSelected())
+                    {
+                        checkBox2ofTask4.setSelected(false);
+                        temp=temp.replaceAll(checkBox2ofTask4.getText(), "");
+
+                    }
+                    else {
+                        checkBox2ofTask4.setSelected(true);
+                        temp = temp.replaceAll(checkBox2ofTask4.getText(), "");
+                    }
                 }
                 if((temp.indexOf(" " + checkBox3ofTask4.getText())!=-1
                         ||temp.indexOf(checkBox3ofTask4.getText())==0)
                         && (temp.indexOf(checkBox3ofTask4.getText()+ " " )!=-1
                         ||temp.indexOf(checkBox3ofTask4.getText())+checkBox3ofTask4.getText().length()==temp.length()))
                 {
-                    checkBox3ofTask4.setSelected(true);
-                    temp=temp.replaceAll(checkBox3ofTask4.getText(), "");
+                    if (checkBox3ofTask4.isSelected())
+                    {
+                        checkBox3ofTask4.setSelected(false);
+                        temp=temp.replaceAll(checkBox3ofTask4.getText(), "");
+
+                    }
+                    else {
+                        checkBox3ofTask4.setSelected(true);
+                        temp = temp.replaceAll(checkBox3ofTask4.getText(), "");
+                    }
                 }
                 if (!temp.trim().isEmpty())
                 {

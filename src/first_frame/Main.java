@@ -1,5 +1,6 @@
 package first_frame;
 
+import javax.swing.*;
 import java.awt.*;
 
 /**
@@ -7,7 +8,11 @@ import java.awt.*;
  */
 public class Main {
     public static void main(String[] args) {
-        MainFrame mainFrame = new MainFrame("Frame", new Dimension(1080,720));
-        mainFrame.init();
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                MainFrame mainFrame = new MainFrame("Frame", new Dimension(1080, 720));
+                mainFrame.init();
+            }
+        });
     }
 }

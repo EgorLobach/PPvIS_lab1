@@ -60,5 +60,11 @@ public class TableModel extends AbstractTableModel {
     {
         dataArrayList.remove(rowIndex);
     }
+    public void changeData(int rowIndex, String []row)
+    {
+        removeData(rowIndex);
+        addData(row, rowIndex);
+    }
+
 
 }

@@ -73,7 +73,10 @@ public class Task5 {
             String [] str = new String[2];
             str[1]=(String)tableModel.getValueAt(table.getSelectedRow(), table.getSelectedColumn());
             if (table.getSelectedColumn()==1||str[1].trim().isEmpty())
+            {
+                JOptionPane.showMessageDialog(new JFrame(), "Не та колонка или ячейка пуста!!!");
                 return;
+            }
             str[0]="";
             tableModel.removeData(table.getSelectedRow());
             tableModel.addData(str, table.getSelectedRow());
@@ -89,7 +92,10 @@ public class Task5 {
             String [] str = new String[2];
             str[0]=(String)tableModel.getValueAt(table.getSelectedRow(), table.getSelectedColumn());
             if (table.getSelectedColumn()==0||str[0].trim().isEmpty())
+            {
+                JOptionPane.showMessageDialog(new JFrame(), "Не та колонка или ячейка пуста!!!");
                 return;
+            }
             str[1]="";
             tableModel.removeData(table.getSelectedRow());
             tableModel.addData(str, table.getSelectedRow());
